@@ -5,9 +5,9 @@ $(document).ready(function() {
 //get api key
 
 let apiKey = "e24495f44919a5535deac5311a5213a8"
-let placeInfo = "q=stratham,nh,us"
+let placeInfo = "stratham,nh,us"
 
-let queryURL = "api.openweathermap.org/data/2.5/forecast?" + placeInfo + "&appid=" + apiKey;
+let queryURL = "api.openweathermap.org/data/2.5/forecast?q=" + placeInfo + "&appid=" + apiKey;
 
 $.get(queryURL, function(response) {
     console.log(queryURL);
