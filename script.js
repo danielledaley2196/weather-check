@@ -31,7 +31,16 @@ $(".fa-search").on("click", function() {
          $(".temp").text(`Temp: ${Math.floor(response.main.temp)} F`);
          $(".humidity").text(`Humidity: Humidity: ${response.main.humidity} %`);
          $(".wind-speed").text(`Wind Speed: ${response.wind.speed} MPH`);
-     })
+
+         let uvCall =
+          uvUrl +
+          `lat=${response.coord.lat}` +
+          `&lon=${response.coord.lon}&appid=` +
+          apiKey;
+          $.get(uvCall, function(uvResponse){
+            $(".uvIndex").text(uvResponse.value)
+          });
+     });
  }
 });
 
