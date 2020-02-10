@@ -4,3 +4,7 @@
 div.list-unstyled {
     background-color: blue;
 }
+header {
+    text-align: center;
+    background-color: gray;
+}
