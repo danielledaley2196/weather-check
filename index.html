@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="tsxt/css" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="tsxt/css" href="style.css" />
     <title>Weather Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
-          </nav>
+      <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+      </nav>
     </header>
     <div class="row">
-    <div class="col-4">
-    <form id="searchbar">
-        <label for="weatherSearch">Search for a City:</label>
-        <input type="text" id="weatherSearch" name="weatherSearch" placeholder="City,State,Country"><button type="button" class="search-button btn btn-primary"><i class="fas fa-search"></i></button>
-    </form>
-    <!-- have recent serches appeneded here-->
-    </div>
-    <div class="col-8">
-<!-- put information here for the search results-->
-    </div>
+      <div class="col-4">
+        <form id="searchbar">
+          <label for="weatherSearch">Search for a City:</label>
+          <input
+            type="text"
+            id="weatherSearch"
+            name="weatherSearch"
+            placeholder="City,State,Country"
+          /><button type="button" class="search-button btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <!-- have recent serches appeneded here-->
+        <ul class="recentSearch"></ul>
+      </div>
+      <div class="col-8">
+        <div class="card-body">
+          <h3 class="infoHere">Weather</h3>
+          <ul class="info-list">
+            <li class="temp">Temp:</li>
+            <li class="humidity">Humidity:</li>
+            <li class="wind-speed">Wind Speed:</li>
+            <li class="uvIndex">UV Index</li>
+          </ul>
+        </div>
+        <div class="row forcast">
+            <h3 class="futurecast">5 Day Forcast</h3>
+            <div class="col-2 list-unstyled day1"></div>
+            <div class="col-2 list-unstyled day2"></div>
+            <div class="col-2 list-unstyled day3"></div>
+            <div class="col-2 list-unstyled day4"></div>
+            <div class="col-2 list-unstyled day5"></div>
+        </div>
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/44876818e1.js" crossorigin="anonymous"></script>
-<script src="script.js"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/44876818e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
