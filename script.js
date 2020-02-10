@@ -9,6 +9,7 @@ let placeInfo = "";
 let currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=";
 let futurecast = "https://api.openweathermap.org/data/2.5/forecast?q=";
 let uvURL = "https://api.openweathermap.org/data/2.5/uvi?";
+localStorage.getItem(".city")
 
 // get input data here
 $(".fa-search").on("click", function() {
@@ -20,7 +21,7 @@ $(".fa-search").on("click", function() {
 
  $(".recentSearch").append("<li>", "</br>").addClass("city").text(placeInfo);
  
- localStorage.setItem(".city")
+ localStorage.setItem(".city", "string");
 
  getCurrent();
  getFuture();
@@ -31,15 +32,15 @@ $(".fa-search").on("click", function() {
          $(".temp").text(`Temp: ${Math.floor(response.main.temp)} F`);
          $(".humidity").text(`Humidity: Humidity: ${response.main.humidity} %`);
          $(".wind-speed").text(`Wind Speed: ${response.wind.speed} MPH`);
+     });
 
-         let uvCall =
-          uvUrl +
+     let uvCall =
+          uvURL +
           `lat=${response.coord.lat}` +
           `&lon=${response.coord.lon}&appid=` +
           apiKey;
           $.get(uvCall, function(uvResponse){
             $(".uvIndex").text(uvResponse.value)
-          });
      });
  }
 });
