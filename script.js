@@ -5,20 +5,35 @@ $(document).ready(function() {
 //get api key
 
 let apiKey = "e24495f44919a5535deac5311a5213a8";
-let placeInfo;
-let searchBtn = document.querySelector(".search-button");
-let queryURL = "api.openweathermap.org/data/2.5/forecast?q=" + placeInfo + "&appid=" + apiKey;
-console.log(searchBtn);
-$.get(queryURL, function(response) {
-    console.log(queryURL);
-    console.log(response);
-})
+let placeInfo = "";
+let currentWeather = "https://api.openweathermap.org/data/2.5/weather?q=";
+let futurecast = "https://api.openweathermap.org/data/2.5/forecast?q=";
+let uvURL = "https://api.openweathermap.org/data/2.5/uvi?";
 
 // get input data here
-searchBtn.on("click", function() {
- let searchInput = $("input").val();
- console.log(searchInput);
-})
+$(".fa-search").on("click", function() {
+    $(".list-unstyled").empty();
+ let placeInfo = $("#weatherSearch").val();
+
+ let callCurrent = `${currentWeather}${placeInfo}",us&mode=json&units=imperial&appid="${apiKey}`;
+ let callFuture = `${futurecast}${placeInfo}",us&mode=json&units=imperial&appid="${apiKey}`;
+
+ $(".recentSearch").append("<li>", "</br>").addClass("city").text(placeInfo);
+ 
+ localStorage.setItem(".city")
+
+ getCurrent();
+ getFuture();
+
+ function getCurrent() {
+     $.get(callCurrent, function(response) {
+         $(".name").text(response.name);
+         $(".temp").text(`Temp: ${Math.floor(response.main.temp)} F`);
+         $(".humidity").text(`Humidity: Humidity: ${response.main.humidity} %`);
+         $(".wind-speed").text(`Wind Speed: ${response.wind.speed} MPH`);
+     })
+ }
+});
 
 
 //save to local storage
