@@ -6,6 +6,8 @@ This application will give you the ability to check the weater wherever you want
 
 ## Links
 [Github Repo](https://github.com/danielledaley2196/weather-check)
+</br>
 [Live Application](https://danielledaley2196.github.io/weather-check/)
 
 ## Screenshots
+![Screenshot of Application](Weather2.png)
