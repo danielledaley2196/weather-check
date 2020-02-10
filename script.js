@@ -16,8 +16,8 @@ $(".fa-search").on("click", function() {
     $(".list-unstyled").empty();
  let placeInfo = $("#weatherSearch").val();
 
- let callCurrent = `${currentWeather}${placeInfo}",us&mode=json&units=imperial&appid="${apiKey}`;
- let callFuture = `${futurecast}${placeInfo}",us&mode=json&units=imperial&appid="${apiKey}`;
+ let callCurrent = `${currentWeather}${placeInfo},us&mode=json&units=imperial&appid=${apiKey}`;
+ let callFuture = `${futurecast}${placeInfo},us&mode=json&units=imperial&appid=${apiKey}`;
 
  $(".recentSearch").append("<li>", "</br>").addClass("city").text(placeInfo);
  
